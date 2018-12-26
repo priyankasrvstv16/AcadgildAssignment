@@ -1,17 +1,14 @@
-def do_sum(a,b):
 
-    return a+b
+def Myreduce(fnc, seq):
 
-def my_reduce(func, seq):
+	t = seq[0]
 
-    sum = 0
+	for next in seq[1:]:
 
-    for i in range(len(seq)):
-        sum = sum+i
+		t = fnc(t, next)
 
-    return sum
+	return t
 
-k = my_reduce(do_sum , [2,3,4,5,6,7,8])
+r = Myreduce((lambda x,y: x*y),[3,1,5,1,3,2])
 
-
-print(k)
+print(r)
